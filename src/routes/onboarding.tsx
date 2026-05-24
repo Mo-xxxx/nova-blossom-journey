@@ -153,7 +153,6 @@ function Onboarding() {
                     <span className="font-display text-sm italic">P6</span>
                   </div>
                 </div>
-                </div>
                 <p className="mt-3 flex items-center justify-center gap-2 text-center text-[11px] uppercase tracking-[0.25em] text-starlight/70">
                   <Check className="h-3 w-3 text-rose-gold" /> Place node here
                 </p>
