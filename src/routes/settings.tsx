@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { useProfile, saveProfile } from "@/lib/nova-store";
-import { Bluetooth, Bell, User, ChevronRight, LogOut, ShieldCheck } from "lucide-react";
+import { Bluetooth, Bell, User, ChevronRight, LogOut, ShieldCheck, CalendarHeart } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -51,6 +51,16 @@ function SettingsPage() {
           subtitle="Last calibrated today"
           right={<ChevronRight className="h-4 w-4 text-foreground/30" />}
           onClick={() => toast("Hold band still for 30 sec…")}
+        />
+      </Section>
+
+      <Section title="Care schedule">
+        <Row
+          icon={<CalendarHeart className="h-4 w-4" />}
+          title="Appointments & reminders"
+          subtitle="Doctor visits, daily rituals"
+          right={<ChevronRight className="h-4 w-4 text-foreground/30" />}
+          onClick={() => nav({ to: "/appointments" })}
         />
       </Section>
 
