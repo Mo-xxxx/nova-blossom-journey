@@ -1,5 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
+import handImg from "@/assets/p6-hand.png";
 import { NovaLogo } from "@/components/NovaLogo";
 import { saveProfile, type WristbandSize } from "@/lib/nova-store";
 import { ArrowRight, Check } from "lucide-react";
