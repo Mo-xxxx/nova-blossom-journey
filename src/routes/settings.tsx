@@ -69,7 +69,7 @@ function SettingsPage() {
           title="Edit profile"
           subtitle="Name, age, preferences"
           right={<ChevronRight className="h-4 w-4 text-foreground/30" />}
-          onClick={() => toast("Opening profile…")}
+          onClick={() => nav({ to: "/profile" })}
         />
       </Section>
 
