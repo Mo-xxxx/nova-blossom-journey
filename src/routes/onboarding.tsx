@@ -138,44 +138,72 @@ function Onboarding() {
 
               <div className="rounded-3xl border border-starlight/15 bg-starlight/5 p-5">
                 <div className="relative mx-auto w-52">
-                  <svg viewBox="0 0 180 240" className="h-auto w-full" fill="none">
+                  <svg viewBox="0 0 200 340" className="h-auto w-full" fill="none">
                     <defs>
                       <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stopColor="hsl(25 45% 88%)" />
-                        <stop offset="100%" stopColor="hsl(20 35% 74%)" />
+                        <stop offset="0%" stopColor="hsl(25 50% 90%)" />
+                        <stop offset="100%" stopColor="hsl(20 38% 76%)" />
                       </linearGradient>
                       <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
-                        <stop offset="0%" stopColor="hsl(15 80% 72%)" stopOpacity="0.9" />
+                        <stop offset="0%" stopColor="hsl(15 80% 72%)" stopOpacity="0.95" />
                         <stop offset="60%" stopColor="hsl(15 80% 72%)" stopOpacity="0.25" />
                         <stop offset="100%" stopColor="hsl(15 80% 72%)" stopOpacity="0" />
                       </radialGradient>
                     </defs>
+
+                    {/* Fingers (palm-up, left hand) — long and slender */}
+                    {/* Index */}
+                    <path d="M62 115 Q58 70 60 35 Q61 22 70 22 Q79 22 79 35 Q80 72 76 115 Z"
+                      fill="url(#skin)" stroke="hsl(20 30% 58%)" strokeWidth="0.8" />
+                    {/* Middle (longest) */}
+                    <path d="M84 115 Q82 60 84 22 Q85 8 94 8 Q104 8 104 22 Q105 60 101 115 Z"
+                      fill="url(#skin)" stroke="hsl(20 30% 58%)" strokeWidth="0.8" />
+                    {/* Ring */}
+                    <path d="M108 115 Q107 65 110 30 Q111 17 119 17 Q128 17 128 30 Q130 67 125 115 Z"
+                      fill="url(#skin)" stroke="hsl(20 30% 58%)" strokeWidth="0.8" />
+                    {/* Pinky (shortest) */}
+                    <path d="M131 118 Q132 85 136 55 Q138 44 146 44 Q154 45 153 56 Q151 88 147 118 Z"
+                      fill="url(#skin)" stroke="hsl(20 30% 58%)" strokeWidth="0.8" />
+
+                    {/* Thumb on right (left hand, palm up) */}
+                    <path d="M152 130 Q175 118 180 92 Q182 80 173 76 Q162 74 156 88 Q150 108 148 128 Z"
+                      fill="url(#skin)" stroke="hsl(20 30% 58%)" strokeWidth="0.8" />
+
                     {/* Palm */}
-                    <path
-                      d="M55 30 Q50 10 70 8 Q75 0 85 6 Q92 0 100 6 Q110 0 115 10 Q130 12 128 32 L130 60 Q132 70 128 80 L125 95 L55 95 L52 80 Q48 70 50 60 Z"
-                      fill="url(#skin)" stroke="hsl(20 30% 58%)" strokeWidth="1"
-                    />
-                    {/* Wrist creases */}
-                    <path d="M55 95 Q90 100 125 95" stroke="hsl(20 30% 52%)" strokeWidth="1" opacity="0.6" />
-                    <path d="M58 102 Q90 107 122 102" stroke="hsl(20 30% 52%)" strokeWidth="0.8" opacity="0.4" />
+                    <path d="M55 130 Q55 115 70 115 L150 115 Q160 115 162 132 L160 185 Q160 195 150 195 L62 195 Q52 195 52 185 Z"
+                      fill="url(#skin)" stroke="hsl(20 30% 58%)" strokeWidth="1" />
+
+                    {/* Palm crease lines */}
+                    <path d="M70 140 Q105 150 150 138" stroke="hsl(20 30% 55%)" strokeWidth="0.6" opacity="0.45" />
+                    <path d="M72 158 Q108 168 148 156" stroke="hsl(20 30% 55%)" strokeWidth="0.6" opacity="0.4" />
+
+                    {/* Wrist crease */}
+                    <path d="M58 192 Q105 200 158 192" stroke="hsl(20 30% 52%)" strokeWidth="1" opacity="0.7" />
+                    <path d="M60 200 Q105 207 156 200" stroke="hsl(20 30% 52%)" strokeWidth="0.8" opacity="0.45" />
+
                     {/* Forearm */}
-                    <path
-                      d="M55 95 L60 230 Q90 238 120 230 L125 95 Z"
-                      fill="url(#skin)" stroke="hsl(20 30% 58%)" strokeWidth="1"
-                    />
-                    {/* Two-finger guide */}
-                    <line x1="90" y1="103" x2="90" y2="138" stroke="hsl(var(--rose-gold, 25 60% 60%))" strokeWidth="1" strokeDasharray="3 3" opacity="0.75" />
-                    <text x="96" y="124" fill="hsl(var(--rose-gold, 25 60% 60%))" fontSize="9" fontFamily="sans-serif">2 fingers</text>
+                    <path d="M58 195 L66 330 Q105 338 144 330 L152 195 Z"
+                      fill="url(#skin)" stroke="hsl(20 30% 58%)" strokeWidth="1" />
+
+                    {/* Tendon hints framing P6 */}
+                    <path d="M95 205 Q93 240 96 275" stroke="hsl(20 30% 60%)" strokeWidth="0.5" opacity="0.35" />
+                    <path d="M115 205 Q117 240 114 275" stroke="hsl(20 30% 60%)" strokeWidth="0.5" opacity="0.35" />
+
+                    {/* 3-finger measurement guide */}
+                    <line x1="105" y1="200" x2="105" y2="240" stroke="hsl(var(--rose-gold, 25 60% 60%))" strokeWidth="1" strokeDasharray="3 3" opacity="0.75" />
+                    <text x="112" y="224" fill="hsl(var(--rose-gold, 25 60% 60%))" fontSize="9" fontFamily="sans-serif">3 fingers</text>
+
                     {/* P6 glow */}
-                    <circle cx="90" cy="142" r="30" fill="url(#glow)">
-                      <animate attributeName="r" values="26;34;26" dur="2.4s" repeatCount="indefinite" />
+                    <circle cx="105" cy="245" r="32" fill="url(#glow)">
+                      <animate attributeName="r" values="28;36;28" dur="2.4s" repeatCount="indefinite" />
                       <animate attributeName="opacity" values="0.7;1;0.7" dur="2.4s" repeatCount="indefinite" />
                     </circle>
-                    <circle cx="90" cy="142" r="7" fill="hsl(var(--rose-gold, 25 60% 60%))" />
-                    <circle cx="90" cy="142" r="2.5" fill="hsl(40 95% 92%)" />
-                    {/* Label */}
-                    <line x1="97" y1="142" x2="138" y2="168" stroke="hsl(var(--rose-gold, 25 60% 60%))" strokeWidth="1" opacity="0.8" />
-                    <text x="140" y="172" fill="hsl(var(--rose-gold, 25 60% 60%))" fontSize="12" fontFamily="serif" fontStyle="italic">P6</text>
+                    <circle cx="105" cy="245" r="7.5" fill="hsl(var(--rose-gold, 25 60% 60%))" />
+                    <circle cx="105" cy="245" r="2.5" fill="hsl(40 95% 92%)" />
+
+                    {/* P6 label */}
+                    <line x1="113" y1="245" x2="158" y2="272" stroke="hsl(var(--rose-gold, 25 60% 60%))" strokeWidth="1" opacity="0.8" />
+                    <text x="160" y="276" fill="hsl(var(--rose-gold, 25 60% 60%))" fontSize="12" fontFamily="serif" fontStyle="italic">P6</text>
                   </svg>
                 </div>
                 <p className="mt-3 flex items-center justify-center gap-2 text-center text-[11px] uppercase tracking-[0.25em] text-starlight/70">
