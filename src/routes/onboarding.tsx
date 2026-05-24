@@ -130,17 +130,56 @@ function Onboarding() {
           )}
 
           {step === 3 && (
-            <div className="space-y-6">
+            <div className="space-y-5">
               <h2 className="font-display text-3xl">Calibrate your doctor node</h2>
               <p className="text-starlight/70">
-                Place the wristband on your left wrist with the doctor node — the small rose-gold sensor — aligned with the P6 acupoint, two fingers below your palm crease. Hold still for 30 seconds.
+                Align the rose-gold sensor with the glowing point below — your P6 acupoint. Hold still for 30 seconds.
               </p>
-              <div className="rounded-3xl border border-starlight/15 bg-starlight/5 p-6">
-                <div className="mx-auto grid h-32 w-32 place-items-center rounded-full bg-gradient-rose shadow-glow animate-pulse-glow">
-                  <Check className="h-12 w-12 text-primary-foreground" />
+
+              <div className="rounded-3xl border border-starlight/15 bg-starlight/5 p-5">
+                <div className="relative mx-auto w-52">
+                  <svg viewBox="0 0 180 240" className="h-auto w-full" fill="none">
+                    <defs>
+                      <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stopColor="hsl(25 45% 88%)" />
+                        <stop offset="100%" stopColor="hsl(20 35% 74%)" />
+                      </linearGradient>
+                      <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+                        <stop offset="0%" stopColor="hsl(15 80% 72%)" stopOpacity="0.9" />
+                        <stop offset="60%" stopColor="hsl(15 80% 72%)" stopOpacity="0.25" />
+                        <stop offset="100%" stopColor="hsl(15 80% 72%)" stopOpacity="0" />
+                      </radialGradient>
+                    </defs>
+                    {/* Palm */}
+                    <path
+                      d="M55 30 Q50 10 70 8 Q75 0 85 6 Q92 0 100 6 Q110 0 115 10 Q130 12 128 32 L130 60 Q132 70 128 80 L125 95 L55 95 L52 80 Q48 70 50 60 Z"
+                      fill="url(#skin)" stroke="hsl(20 30% 58%)" strokeWidth="1"
+                    />
+                    {/* Wrist creases */}
+                    <path d="M55 95 Q90 100 125 95" stroke="hsl(20 30% 52%)" strokeWidth="1" opacity="0.6" />
+                    <path d="M58 102 Q90 107 122 102" stroke="hsl(20 30% 52%)" strokeWidth="0.8" opacity="0.4" />
+                    {/* Forearm */}
+                    <path
+                      d="M55 95 L60 230 Q90 238 120 230 L125 95 Z"
+                      fill="url(#skin)" stroke="hsl(20 30% 58%)" strokeWidth="1"
+                    />
+                    {/* Two-finger guide */}
+                    <line x1="90" y1="103" x2="90" y2="138" stroke="hsl(var(--rose-gold, 25 60% 60%))" strokeWidth="1" strokeDasharray="3 3" opacity="0.75" />
+                    <text x="96" y="124" fill="hsl(var(--rose-gold, 25 60% 60%))" fontSize="9" fontFamily="sans-serif">2 fingers</text>
+                    {/* P6 glow */}
+                    <circle cx="90" cy="142" r="30" fill="url(#glow)">
+                      <animate attributeName="r" values="26;34;26" dur="2.4s" repeatCount="indefinite" />
+                      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.4s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="90" cy="142" r="7" fill="hsl(var(--rose-gold, 25 60% 60%))" />
+                    <circle cx="90" cy="142" r="2.5" fill="hsl(40 95% 92%)" />
+                    {/* Label */}
+                    <line x1="97" y1="142" x2="138" y2="168" stroke="hsl(var(--rose-gold, 25 60% 60%))" strokeWidth="1" opacity="0.8" />
+                    <text x="140" y="172" fill="hsl(var(--rose-gold, 25 60% 60%))" fontSize="12" fontFamily="serif" fontStyle="italic">P6</text>
+                  </svg>
                 </div>
-                <p className="mt-4 text-center text-sm text-starlight/70">
-                  Calibration successful — your baseline is captured.
+                <p className="mt-3 flex items-center justify-center gap-2 text-center text-[11px] uppercase tracking-[0.25em] text-starlight/70">
+                  <Check className="h-3 w-3 text-rose-gold" /> Place node here
                 </p>
               </div>
             </div>
