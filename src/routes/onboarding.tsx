@@ -134,7 +134,7 @@ function Onboarding() {
             <div className="space-y-5">
               <h2 className="font-display text-3xl">Calibrate your doctor node</h2>
               <p className="text-starlight/70">
-                Align the rose-gold sensor with the glowing point below — your P6 acupoint. Hold still for 30 seconds.
+                Align the sensor with the glowing point below. Hold still for 30 seconds.
               </p>
 
               <div className="rounded-3xl border border-starlight/15 bg-starlight/5 p-5">
@@ -148,7 +148,7 @@ function Onboarding() {
                     className="h-auto w-full rounded-2xl"
                   />
                   {/* P6 label */}
-                  <div className="absolute right-2 top-1/2 flex items-center gap-2 text-rose-gold">
+                  <div className="absolute right-2 top-1/2 text-rose-gold items-center justify-start gap-[10px] flex flex-row py-[20px]">
                     <span className="h-px w-8 bg-rose-gold/60" />
                     <span className="font-display text-sm italic">P6</span>
                   </div>
