@@ -78,7 +78,7 @@ function Onboarding() {
                 Your new beginning, <em className="not-italic text-rose-gold">understood.</em>
               </h2>
               <p className="text-starlight/70">
-                Nova quietly pairs with your wristband to learn the language of your body — hot flashes, sleep, and emotion — so you can feel yourself again.
+                Nova quietly pairs with your wristband to learn the language of your body, hot flashes, sleep, and emotion so you can feel yourself again.
               </p>
               <Stat label="What's your name?" />
               <input
