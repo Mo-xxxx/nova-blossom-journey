@@ -67,7 +67,7 @@ function Monitor() {
       </div>
 
       {/* Node readings */}
-      <div className="mt-4 grid grid-cols-2 gap-4">
+      <div className="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
         <NodeCard
           name="P6"
           subtitle="Inner wrist · Neiguan"

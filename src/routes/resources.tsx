@@ -26,7 +26,7 @@ function Resources() {
 
       <section className="mt-6">
         <h3 className="mb-3 px-1 text-sm font-medium text-foreground/70">Hot flash tips</h3>
-        <div className="space-y-2">
+        <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
           {tips.map(({ icon: Icon, title, body }) => (
             <div key={title} className="flex gap-4 rounded-3xl bg-card p-5 shadow-soft">
               <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-gradient-blush text-rose-gold">
