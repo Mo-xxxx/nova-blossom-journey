@@ -76,20 +76,17 @@ function Home() {
       </section>
 
       {/* Stat cards */}
-      <section className="mt-5 grid grid-cols-2 gap-4">
+      <section className="mt-5 grid grid-cols-2 gap-4 lg:grid-cols-3">
         <StatCard icon={<Flame className="h-4 w-4" />} label="Hot flashes" value={today.toString()} unit="today" tone="rose" />
         <StatCard icon={<Moon className="h-4 w-4" />} label="Sleep score" value="82" unit="restful" tone="night" />
-      </section>
-
-      <section className="mt-4">
         <StatCard
-          full
           icon={<Activity className="h-4 w-4" />}
-          label="Body temperature trend"
+          label="Body temperature"
           value="36.7°"
           unit="↘ 0.2° vs morning"
           tone="blush"
           extra={<Sparkline />}
+          className="col-span-2 lg:col-span-1"
         />
       </section>
 
