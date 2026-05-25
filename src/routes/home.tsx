@@ -111,14 +111,14 @@ function Home() {
 }
 
 function StatCard({
-  icon, label, value, unit, tone, extra, full,
+  icon, label, value, unit, tone, extra, full, className,
 }: {
   icon: React.ReactNode; label: string; value: string; unit: string;
-  tone: "rose" | "night" | "blush"; extra?: React.ReactNode; full?: boolean;
+  tone: "rose" | "night" | "blush"; extra?: React.ReactNode; full?: boolean; className?: string;
 }) {
   const bg = tone === "rose" ? "bg-gradient-blush" : tone === "night" ? "bg-gradient-night text-starlight" : "bg-card";
   return (
-    <div className={`relative overflow-hidden rounded-3xl p-5 shadow-soft ${bg} ${full ? "col-span-2" : ""}`}>
+    <div className={`relative overflow-hidden rounded-3xl p-5 shadow-soft ${bg} ${full ? "col-span-2" : ""} ${className ?? ""}`}>
       <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] opacity-70">
         {icon} {label}
       </div>
