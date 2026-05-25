@@ -49,7 +49,7 @@ function Insights() {
         ))}
       </div>
 
-      <section className="rounded-3xl bg-card p-5 shadow-soft">
+      <section className="rounded-3xl bg-card p-5 shadow-soft lg:grid lg:grid-cols-[1fr_2fr] lg:items-center lg:gap-8">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Hot flashes</p>

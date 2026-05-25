@@ -31,6 +31,7 @@ function LogPage() {
 
   return (
     <AppShell title="Your story" subtitle="Episode log">
+      <div className="grid gap-5 md:grid-cols-2 md:items-start">
       {/* Monthly calendar */}
       <section className="rounded-3xl bg-card p-5 shadow-soft">
         <div className="mb-3 flex items-center justify-between">
@@ -97,11 +98,12 @@ function LogPage() {
           <Plus className="h-4 w-4" /> Log entry
         </button>
       </section>
+      </div>
 
       {/* Timeline */}
       <section className="mt-6">
         <h3 className="mb-3 px-1 text-sm font-medium text-foreground/70">Recent episodes</h3>
-        <div className="space-y-2">
+        <div className="grid gap-2 md:grid-cols-2">
           {episodes.slice(0, 12).map((e) => (
             <EpisodeRow key={e.id} e={e} />
           ))}
