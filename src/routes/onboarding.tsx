@@ -38,7 +38,7 @@ function Onboarding() {
 
   return (
     <div className="min-h-screen bg-gradient-night text-starlight">
-      <div className="mx-auto flex min-h-screen max-w-md flex-col px-6 py-10">
+      <div className="mx-auto flex min-h-screen max-w-md flex-col px-6 py-10 md:max-w-xl md:px-10 md:py-16 lg:max-w-2xl lg:px-16 lg:py-20">
         {/* Star field */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-40">
           {Array.from({ length: 40 }).map((_, i) => (
@@ -54,24 +54,25 @@ function Onboarding() {
           ))}
         </div>
 
-        <div className="relative flex items-center gap-3">
-          <NovaLogo size={40} />
+        <div className="relative flex items-center gap-3 md:gap-4">
+          <NovaLogo size={40} className="md:hidden" />
+          <NovaLogo size={56} className="hidden md:block" />
           <div>
-            <p className="font-display text-2xl leading-none">nova</p>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-starlight/60">new beginnings</p>
+            <p className="font-display text-2xl leading-none md:text-3xl">nova</p>
+            <p className="text-[10px] uppercase tracking-[0.25em] text-starlight/60 md:text-xs">new beginnings</p>
           </div>
         </div>
 
-        <div className="relative mt-10 flex gap-1.5">
+        <div className="relative mt-10 flex gap-1.5 md:mt-14 md:h-1.5 lg:mt-20">
           {[0, 1, 2, 3].map((i) => (
             <div
               key={i}
-              className={`h-1 flex-1 rounded-full transition-all ${i <= step ? "bg-gradient-rose" : "bg-starlight/15"}`}
+              className={`h-1 flex-1 rounded-full transition-all md:h-1.5 ${i <= step ? "bg-gradient-rose" : "bg-starlight/15"}`}
             />
           ))}
         </div>
 
-        <div className="relative mt-12 flex-1">
+        <div className="relative mt-12 flex-1 md:mt-16 lg:mt-20">
           {step === 0 && (
             <div className="space-y-6">
               <h2 className="font-display text-4xl leading-tight">

@@ -1,47 +1,44 @@
-# Responsive redesign across mobile, tablet, desktop
+# Desktop Onboarding Responsive Update
 
-Right now Nova is locked to a phone-sized canvas (`max-w-md`, fixed bottom pill nav, single-column cards). On tablet and desktop it just sits as a narrow strip with empty space on the sides. The plan is to keep the calm rose/night aesthetic but let the layout breathe on larger screens.
+## Goal
+Expand the current mobile-only onboarding (`max-w-md` single column) into a comfortable centered wide-card layout on tablet and desktop, keeping the same step flow and starfield background.
 
-## 1. App shell becomes adaptive (`src/components/AppShell.tsx`)
+## Changes to `src/routes/onboarding.tsx`
 
-- **Mobile (<768px)**: keep current experience — centered column, floating bottom pill nav.
-- **Tablet (768–1024px)**: widen content to `max-w-2xl`, two-column grid for cards where it makes sense, keep bottom nav but slightly wider.
-- **Desktop (≥1024px)**: switch to a left **sidebar nav** (vertical, rose-gold active pill, Nova logo + wordmark on top, Settings at the bottom). Content area becomes `max-w-5xl` with generous padding. Hide the bottom pill nav.
-- Header gets larger type on desktop (`md:text-4xl lg:text-5xl`) and aligns to a wider container.
+1. **Container width**
+   - Replace `max-w-md` with `max-w-md md:max-w-xl lg:max-w-2xl` so the card grows on larger screens.
 
-## 2. Page-level layout upgrades
+2. **Padding & spacing**
+   - Increase horizontal padding: `px-6 md:px-10 lg:px-16`
+   - Increase vertical padding: `py-10 md:py-16 lg:py-20`
+   - Increase gap between sections (`mt-10` → `md:mt-14 lg:mt-20`, etc.)
 
-Each route currently stacks cards in one column. Make them adapt:
+3. **Typography scale**
+   - Hero heading: `text-4xl` → `md:text-5xl lg:text-6xl`
+   - Step headings: `text-3xl` → `md:text-4xl lg:text-5xl`
+   - Body text: `text-starlight/70` → `md:text-lg` on descriptive paragraphs
+   - Input text: `text-lg` → `md:text-xl`
+   - Button: `text-base` → `md:text-lg md:py-5`
 
-- **Home** (`src/routes/home.tsx`): hero stays full-width; stat/insight cards become a 2-col grid on tablet, 3-col on desktop.
-- **Insights** (`src/routes/insights.tsx`): charts go side-by-side on desktop (2-col), share-with-doctor card spans full width.
-- **Monitor** (`src/routes/monitor.tsx`): sensor visual centered with max-width; helper text column on the side at desktop.
-- **Log** (`src/routes/log.tsx`): entries become a 2-col masonry on tablet+, add-entry sheet stays modal.
-- **Resources** (`src/routes/resources.tsx`): card grid 2-col tablet / 3-col desktop.
-- **Settings, Profile, Appointments**: form/list stays comfortable reading width (`max-w-xl`) centered; on desktop show a two-pane layout (nav-style section list on the left, detail on the right) only for Settings.
-- **Onboarding** (`src/routes/onboarding.tsx`): on desktop becomes split-screen — animated Nova orb/logo on the left half, step content on the right.
+4. **Logo / tagline area**
+   - Keep the existing logo + "nova" wordmark + "new beginnings" tagline at the top.
+   - Slightly larger logo on desktop (`size={40}` → `md:size={48} lg:size={56}`).
+   - Increase wordmark size: `text-2xl` → `md:text-3xl`.
 
-## 3. Typography & spacing scale
+5. **Step progress bar**
+   - Keep the 4-segment bar but make it slightly thicker and wider on desktop (`h-1` → `md:h-1.5`).
 
-- Introduce responsive type: e.g. headings `text-3xl md:text-4xl lg:text-5xl`, body `text-base md:text-lg` on hero areas.
-- Increase section padding on larger breakpoints (`px-6 md:px-10 lg:px-16`, `py-10 md:py-16`).
-- Keep card radius and shadows the same — they already scale well.
+6. **Form elements**
+   - Inputs and buttons stretch to the wider container naturally via `w-full`.
+   - Wristband size buttons: keep 3-col grid but with more internal padding on desktop.
 
-## 4. Nav component split
+7. **Starfield**
+   - Already absolute full-bleed (`absolute inset-0`) — no change needed, it will fill the wider viewport.
 
-Inside `AppShell`, render:
-- `<MobileTabBar />` — current bottom pill, shown `lg:hidden`.
-- `<DesktopSidebar />` — new, shown `hidden lg:flex`, fixed left, 240px wide, includes Nova logo, nav items, and a profile/settings footer.
-
-Both consume the same `navItems` array so they stay in sync.
-
-## 5. Out of scope
-
-- No backend/data changes.
-- No new routes.
-- No change to brand colors, fonts, or the Nova logo itself.
+## Out of scope
+- No new images or illustrations.
+- No changes to the step logic, validation, or navigation.
 - No dark/light mode toggle.
 
-## Open question
-
-Do you want the **desktop sidebar** style (recommended — feels like a real product on big screens), or should I keep the bottom pill nav centered on all sizes and just widen the content area? The sidebar option is more work but looks much more polished on desktop.
+## Single file touched
+- `src/routes/onboarding.tsx`
