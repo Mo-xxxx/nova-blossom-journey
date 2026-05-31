@@ -55,8 +55,12 @@ function Onboarding() {
         </div>
 
         <div className="relative flex items-center gap-3 md:gap-4">
-          <NovaLogo size={40} className="md:hidden" />
-          <NovaLogo size={56} className="hidden md:block" />
+          <div className="md:hidden">
+            <NovaLogo size={40} />
+          </div>
+          <div className="hidden md:block">
+            <NovaLogo size={56} />
+          </div>
           <div>
             <p className="font-display text-2xl leading-none md:text-3xl">nova</p>
             <p className="text-[10px] uppercase tracking-[0.25em] text-starlight/60 md:text-xs">new beginnings</p>
