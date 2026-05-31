@@ -78,11 +78,11 @@ function Onboarding() {
 
         <div className="relative mt-12 flex-1 md:mt-16 lg:mt-20">
           {step === 0 && (
-            <div className="space-y-6">
-              <h2 className="font-display text-4xl leading-tight">
+            <div className="space-y-6 md:space-y-8">
+              <h2 className="font-display text-4xl leading-tight md:text-5xl lg:text-6xl">
                 Your new beginning, <em className="not-italic text-rose-gold">understood.</em>
               </h2>
-              <p className="text-starlight/70">
+              <p className="text-starlight/70 md:text-lg lg:text-xl">
                 Nova quietly pairs with your wristband to learn the language of your body, hot flashes, sleep, and emotion so you can feel yourself again.
               </p>
               <Stat label="What's your name?" />
@@ -90,42 +90,42 @@ function Onboarding() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Maya"
-                className="w-full rounded-2xl border border-starlight/15 bg-starlight/5 px-5 py-4 text-lg text-starlight placeholder:text-starlight/30 outline-none focus:border-rose-gold"
+                className="w-full rounded-2xl border border-starlight/15 bg-starlight/5 px-5 py-4 text-lg text-starlight placeholder:text-starlight/30 outline-none focus:border-rose-gold md:px-6 md:py-5 md:text-xl"
               />
             </div>
           )}
 
           {step === 1 && (
-            <div className="space-y-6">
-              <h2 className="font-display text-3xl">A little about you</h2>
-              <p className="text-starlight/60">Age helps Nova tune insights to your stage.</p>
+            <div className="space-y-6 md:space-y-8">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl">A little about you</h2>
+              <p className="text-starlight/60 md:text-lg">Age helps Nova tune insights to your stage.</p>
               <Stat label="Age" />
               <input
                 type="number"
                 value={age}
                 onChange={(e) => setAge(e.target.value ? Number(e.target.value) : "")}
                 placeholder="52"
-                className="w-full rounded-2xl border border-starlight/15 bg-starlight/5 px-5 py-4 text-lg text-starlight placeholder:text-starlight/30 outline-none focus:border-rose-gold"
+                className="w-full rounded-2xl border border-starlight/15 bg-starlight/5 px-5 py-4 text-lg text-starlight placeholder:text-starlight/30 outline-none focus:border-rose-gold md:px-6 md:py-5 md:text-xl"
               />
             </div>
           )}
 
           {step === 2 && (
-            <div className="space-y-6">
-              <h2 className="font-display text-3xl">Pick your wristband size</h2>
-              <p className="text-starlight/60">You'll find your size on the inside of the band's clasp.</p>
-              <div className="grid grid-cols-3 gap-3">
+            <div className="space-y-6 md:space-y-8">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl">Pick your wristband size</h2>
+              <p className="text-starlight/60 md:text-lg">You'll find your size on the inside of the band's clasp.</p>
+              <div className="grid grid-cols-3 gap-3 md:gap-5">
                 {(["S", "M", "L"] as WristbandSize[]).map((s) => (
                   <button
                     key={s}
                     onClick={() => setSize(s)}
-                    className={`flex flex-col items-center gap-2 rounded-2xl border px-4 py-6 transition ${
+                    className={`flex flex-col items-center gap-2 rounded-2xl border px-4 py-6 transition md:py-8 ${
                       size === s
                         ? "border-rose-gold bg-gradient-rose text-primary-foreground shadow-glow"
                         : "border-starlight/15 bg-starlight/5 text-starlight/80"
                     }`}
                   >
-                    <span className="font-display text-3xl">{s}</span>
+                    <span className="font-display text-3xl md:text-4xl">{s}</span>
                     <span className="text-[11px] uppercase tracking-widest">
                       {s === "S" ? "140–160mm" : s === "M" ? "160–180mm" : "180–210mm"}
                     </span>
@@ -136,14 +136,14 @@ function Onboarding() {
           )}
 
           {step === 3 && (
-            <div className="space-y-5">
-              <h2 className="font-display text-3xl">Calibrate your doctor node</h2>
-              <p className="text-starlight/70">
+            <div className="space-y-5 md:space-y-7">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl">Calibrate your doctor node</h2>
+              <p className="text-starlight/70 md:text-lg">
                 Align the sensor with the glowing point below. Hold still for 30 seconds.
               </p>
 
-              <div className="rounded-3xl border border-starlight/15 bg-starlight/5 p-5">
-                <div className="relative mx-auto w-56">
+              <div className="rounded-3xl border border-starlight/15 bg-starlight/5 p-5 md:p-8">
+                <div className="relative mx-auto w-56 md:w-72">
                   <img
                     src={handImg}
                     alt="Inner wrist showing the P6 acupoint location"
@@ -155,7 +155,7 @@ function Onboarding() {
                   {/* P6 label */}
                   <div className="absolute right-2 top-1/2 text-rose-gold items-center justify-start gap-[10px] flex flex-row py-[20px]">
                     <span className="h-px w-8 bg-rose-gold/60" />
-                    <span className="font-display text-sm italic">P6</span>
+                    <span className="font-display text-sm italic md:text-base">P6</span>
                   </div>
                 </div>
                 <p className="mt-3 flex items-center justify-center gap-2 text-center text-[11px] uppercase tracking-[0.25em] text-starlight/70">
@@ -166,14 +166,14 @@ function Onboarding() {
           )}
         </div>
 
-        <div className="relative mt-8">
+        <div className="relative mt-8 md:mt-12">
           <button
             disabled={(step === 0 && !name) || (step === 1 && !age)}
             onClick={() => (step === 3 ? finish() : next())}
-            className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-rose px-6 py-4 text-base font-medium text-primary-foreground shadow-glow transition disabled:opacity-40"
+            className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-rose px-6 py-4 text-base font-medium text-primary-foreground shadow-glow transition disabled:opacity-40 md:py-5 md:text-lg"
           >
             {step === 3 ? "Enter Nova" : "Continue"}
-            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5 md:h-5 md:w-5" />
           </button>
           {step > 0 && (
             <button
